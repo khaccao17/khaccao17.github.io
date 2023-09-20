@@ -1,0 +1,24 @@
+<h1>Today is Webnesday</h1>
+<h2>We are coding NodeJs</h2>
+
+<pre>
+    const http = require('http')
+const fs = require('fs') //fs:file system
+const server = http.createServer((req, res) => {
+    //doc du lieu tu file
+    fs.readFile('demo.html', (err, data) => {
+        if (err) {
+            console.log("read file error")
+            console.error(err)
+        }
+        // case 2: đọc file thành công
+        else {
+            res.write(data)
+            res.end()
+        }
+    })
+})
+server.listen(3000), () => {
+    console.log("http://localhost:3000")
+}
+</pre>
